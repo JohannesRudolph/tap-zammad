@@ -145,6 +145,7 @@ class TagsStream(ZammadStream):
     path = "/tags?object=Ticket&o_id={ticket_id}"
     primary_keys = ["ticket_id"]
     replication_key = None
+    ignore_parent_replication_key = True
 
     schema = th.PropertiesList(
         th.Property("ticket_id", th.IntegerType, required=True),
